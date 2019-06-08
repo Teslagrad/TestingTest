@@ -2,7 +2,9 @@
 version: 2.1
 jobs:
   build:
-    steps:
-      - checkout
-      - run: npm install
-      - run: npm test
+    docker:
+      - image: circleci/node:10.16.0
+      steps:
+        - checkout
+        - run: npm install
+        - run: npm test
